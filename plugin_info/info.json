@@ -1,35 +1,35 @@
 {
-  "id": "refoss",
-  "name": "Refoss",
-  "pluginVersion": "1.0",
-  "description": {
-    "fr_FR": "",
-    "en_US": ""
-  },
-  "licence": "AGPL",
-  "author": "Wocha",
-  "require": "4.4",
-  "category": "energy",
-  "hasDependency": true,
-  "hasOwnDeamon": true,
-  "maxDependancyInstallTime": 60,
-  "changelog": "https://WoCha-FR.github.io/jeedom-refoss/#language#/changelog",
-  "documentation": "https://WoCha-FR.github.io/jeedom-refoss/#language#/",
-  "changelog_beta": "https://WoCha-FR.github.io/jeedom-refoss/#language#/changelog_beta",
-  "documentation_beta": "https://WoCha-FR.github.io/jeedom-refoss/#language#/index_beta",
-  "issue": "https://github.com/WoCha-FR/jeedom-refoss/issues",
-  "language": [
-    "fr_FR",
-    "en_US"
-  ],
-  "compatibility": [
-    "smart",
-    "luna",
-    "atlas",
-    "rpi",
-    "docker",
-    "diy",
-    "v4",
-    "mobileapp"
-  ]
+	"id": "refoss",
+	"name": "Refoss",
+	"pluginVersion": "1.0",
+	"description": {
+		"fr_FR": "",
+		"en_US": ""
+	},
+	"licence": "AGPL",
+	"author": "Wocha",
+	"require": "4.4",
+	"category": "energy",
+	"hasDependency": true,
+	"hasOwnDeamon": true,
+	"maxDependancyInstallTime": 60,
+	"changelog": "https://WoCha-FR.github.io/jeedom-refoss/#language#/changelog",
+	"documentation": "https://WoCha-FR.github.io/jeedom-refoss/#language#/",
+	"changelog_beta": "https://WoCha-FR.github.io/jeedom-refoss/#language#/changelog_beta",
+	"documentation_beta": "https://WoCha-FR.github.io/jeedom-refoss/#language#/index_beta",
+	"issue": "https://github.com/WoCha-FR/jeedom-refoss/issues",
+	"language": [
+		"en_US",
+		"fr_FR"
+	],
+	"compatibility": [
+		"smart",
+		"luna",
+		"atlas",
+		"rpi",
+		"docker",
+		"diy",
+		"v4",
+		"mobileapp"
+	]
 }
