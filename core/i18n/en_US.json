@@ -1,1 +1,80 @@
-{}
+{
+    "plugins\/refoss\/core\/ajax\/refoss.ajax.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized access",
+        "Aucune méthode correspondante à :": "No method corresponding to:"
+    },
+    "plugins\/refoss\/core\/class\/refoss.class.php": {
+        "Création des commandes pour un device de type ": "",
+        "Découverte des modules sur tout le réseau...": "",
+        "Découverte du module avec l'ip %s": "",
+        "Fichier de configuration absent.": "",
+        "Fichier de configuration incorrect.": "",
+        "Impossible de lancer le démon": "",
+        "Le démon n\\'est pas démarré": "",
+        "Veuillez vérifier la configuration": ""
+    },
+    "plugins\/refoss\/core\/php\/jeerefoss.php": {
+        "Aucun device configuré, veuillez lancer une découverte depuis la page de gestion des équipements du plugin": "",
+        "Découverte réussie": "",
+        "Echec de la découverte, veuillez consulter le log du démon": "",
+        "Vous n\\'etes pas autorisé à effectuer cette action": ""
+    },
+    "plugins\/refoss\/desktop\/js\/refoss.js": {
+        "Afficher": "Show",
+        "Choisir une icône": "Choose an icon",
+        "Configuration avancée": "Advanced configuration",
+        "Découverte des équipements": "",
+        "Historiser": "Historize",
+        "IP du module (optionnelle)": "",
+        "Max": "Maximum",
+        "Min": "Minimum",
+        "Nom de la commande": "",
+        "Supprimer la commande": "",
+        "Tester": "Test",
+        "Unité": "Unit",
+        "uniquement nécessaire si le module est sur un LAN différent de Jeedom": ""
+    },
+    "plugins\/refoss\/desktop\/php\/refoss.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized access",
+        "Actions": "Actions",
+        "Activer": "Enable",
+        "Adresse IP": "",
+        "Ajouter": "Add",
+        "Aucun": "None",
+        "Aucun équipement trouvé, cliquer sur \"Découverte\" pour commencer": "",
+        "Catégorie": "Category",
+        "Commandes": "Commands",
+        "Configuration": "Configuration",
+        "Configuration avancée": "Advanced configuration",
+        "Découverte": "",
+        "Equipement": "Equipment",
+        "Equipement non visible": "",
+        "Equipement visible": "",
+        "Etat": "State",
+        "Gestion": "Management",
+        "Informations": "Information",
+        "MAC": "Mac",
+        "Mes équipements": "",
+        "Nom": "Name",
+        "Nom de l'équipement": "",
+        "Objet parent": "Parent object",
+        "Options": "Options",
+        "Paramètres": "Settings",
+        "Paramètres généraux": "",
+        "Rechercher": "Search",
+        "Sauvegarder": "Save",
+        "Sous Type": "",
+        "Supprimer": "Delete",
+        "Type": "Kind",
+        "UUID": "",
+        "Version logiciel": "",
+        "Version matériel": "",
+        "Visible": "Visible"
+    },
+    "plugins\/refoss\/plugin_info\/configuration.php": {
+        "55182 par défaut si non précisé": "",
+        "Cycle d'actualisation": "",
+        "Port du socket interne (pour éviter un conflit avec un autre plugin)": "",
+        "en secondes - par défaut 5s": ""
+    }
+}
