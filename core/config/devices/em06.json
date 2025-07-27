@@ -1,0 +1,443 @@
+{
+  "name": "EM06",
+  "commands" : [
+    {
+      "name": "A1 Tension",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "V",
+      "generic_type": "VOLTAGE",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "a1voltage"
+    },
+    {
+      "name": "A1 Courant",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "A",
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "a1current"
+    },
+    {
+      "name": "A1 Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "W",
+      "generic_type": "POWER",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "a1power"
+    },
+    {
+      "name": "A1 Facteur Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "configuration": {
+        "minValue": "-1",
+        "maxValue": "1"
+      },
+      "logicalId" : "a1factor"
+    },
+    {
+      "name": "A1 Consommation",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "kWh",
+      "generic_type": "CONSUMPTION",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "a1total"
+    },
+    {
+      "name": "A2 Tension",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "V",
+      "generic_type": "VOLTAGE",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "a2voltage"
+    },
+    {
+      "name": "A2 Courant",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "A",
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "a2current"
+    },
+    {
+      "name": "A2 Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "W",
+      "generic_type": "POWER",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "a2power"
+    },
+    {
+      "name": "A2 Facteur Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "configuration": {
+        "minValue": "-1",
+        "maxValue": "1"
+      },
+      "logicalId" : "a2factor"
+    },
+    {
+      "name": "A2 Consommation",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "kWh",
+      "generic_type": "CONSUMPTION",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "a2total"
+    },
+    {
+      "name": "B1 Tension",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "V",
+      "generic_type": "VOLTAGE",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "b1voltage"
+    },
+    {
+      "name": "B1 Courant",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "A",
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "b1current"
+    },
+    {
+      "name": "B1 Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "W",
+      "generic_type": "POWER",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "b1power"
+    },
+    {
+      "name": "B1 Facteur Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "configuration": {
+        "minValue": "-1",
+        "maxValue": "1"
+      },
+      "logicalId" : "b1factor"
+    },
+    {
+      "name": "B1 Consommation",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "kWh",
+      "generic_type": "CONSUMPTION",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "b1total"
+    },
+    {
+      "name": "B2 Tension",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "V",
+      "generic_type": "VOLTAGE",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "b2voltage"
+    },
+    {
+      "name": "B2 Courant",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "A",
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "b2current"
+    },
+    {
+      "name": "B2 Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "W",
+      "generic_type": "POWER",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "b2power"
+    },
+    {
+      "name": "B2 Facteur Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "configuration": {
+        "minValue": "-1",
+        "maxValue": "1"
+      },
+      "logicalId" : "b2factor"
+    },
+    {
+      "name": "B2 Consommation",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "kWh",
+      "generic_type": "CONSUMPTION",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "b2total"
+    },
+    {
+      "name": "C1 Tension",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "V",
+      "generic_type": "VOLTAGE",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "c1voltage"
+    },
+    {
+      "name": "C1 Courant",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "A",
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "c1current"
+    },
+    {
+      "name": "C1 Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "W",
+      "generic_type": "POWER",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "c1power"
+    },
+    {
+      "name": "C1 Facteur Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "configuration": {
+        "minValue": "-1",
+        "maxValue": "1"
+      },
+      "logicalId" : "c1factor"
+    },
+    {
+      "name": "C1 Consommation",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "kWh",
+      "generic_type": "CONSUMPTION",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "c1total"
+    },
+    {
+      "name": "C2 Tension",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "V",
+      "generic_type": "VOLTAGE",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "c2voltage"
+    },
+    {
+      "name": "C2 Courant",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "A",
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "c2current"
+    },
+    {
+      "name": "C2 Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "W",
+      "generic_type": "POWER",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "c2power"
+    },
+    {
+      "name": "C2 Facteur Puissance",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "generic_type": "GENERIC_INFO",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "configuration": {
+        "minValue": "-1",
+        "maxValue": "1"
+      },
+      "logicalId" : "c2factor"
+    },
+    {
+      "name": "C2 Consommation",
+      "type": "info",
+      "subtype": "numeric",
+      "isVisible": 0,
+      "isHistorized": 0,
+      "unite" : "kWh",
+      "generic_type": "CONSUMPTION",
+      "template" : {
+        "dashboard" : "core::line",
+        "mobile" : "core::line"
+      },
+      "logicalId" : "c2total"
+    }
+  ]
+}
