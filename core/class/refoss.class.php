@@ -64,7 +64,7 @@ class refoss extends eqLogic
         $eqLogic = new refoss();
         $eqLogic->setEqType_name(__CLASS__);
         $eqLogic->setLogicalId($uuid);
-        $eqLogic->setName($data['devName']);
+        $eqLogic->setName($data['devName'].'-'. $data['uuid']);
         $eqLogic->setConfiguration('hardware', $data['devHardWare']);
         $eqLogic->setConfiguration('mac', $data['mac']);
         $eqLogic->setConfiguration('uuid', $data['uuid']);
