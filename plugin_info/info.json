@@ -4,7 +4,7 @@
 	"pluginVersion": "1.0",
 	"description": {
 		"fr_FR": "Récupération en local des données des Refoss EM06",
-		"en_US": ""
+		"en_US": "Local recovery of data from Refoss EM06 devices"
 	},
 	"licence": "AGPL",
 	"author": "Wocha",
