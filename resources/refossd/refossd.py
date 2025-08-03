@@ -11,11 +11,19 @@ from jeedomdaemon.base_config import BaseConfig
 class DaemonConfig(BaseConfig):
   def __init__(self):
     super().__init__()
+
     self.add_argument("--actu", help="actualisation en secondes", type=int, default=5)
+    self.add_argument("--excluded_uuid", type=str)
 
   @property
   def actualisation(self):
     return int(self._args.actu)
+
+  @property
+  def excluded_uuid(self):
+    uuids = blids = str(self._args.excluded_uuid)
+    return [str(x) for x in uuids.split(',') if x != '']
+
 
 class RefossD(BaseDaemon):
   def __init__(self) -> None:
@@ -27,7 +35,7 @@ class RefossD(BaseDaemon):
       on_stop_cb = self.on_stop
     )
     self._refossconfigs: refossConfigs = None
-    self._refossEMs : list[EnergyMonitor] = []
+    self._refossems: list[EnergyMonitor] = []
 
   async def on_start(self):
     basedir = os.path.dirname(__file__)
@@ -47,7 +55,7 @@ class RefossD(BaseDaemon):
       self._logger.warning('No devices configured, please run discovery from plugin page')
       await self.send_to_jeedom({'msg': "NO_DEVICES"})
     else:
-      asyncio.create_task(self.__connect_devices())
+      await self.__connect_devices()
 
   async def on_message(self, message: list):
     """
@@ -75,19 +83,24 @@ class RefossD(BaseDaemon):
     for device_config in self._refossconfigs.devices.values():
       self._logger.info('device : %s', device_config.uuid)
       try:
+        if device_config.uuid in self._config.excluded_uuid:
+          self.logger.debug('Device desactivated: %s', device_config.uuid)
+          continue
+
         new_device = EnergyMonitor(device_config)
         new_device.update_interval = self._config.actualisation
-        self._refossEMs.append(new_device)
+        await new_device.start()
+
+        self._refossems.append(new_device)
       except Exception as e:
         self._logger.error('Exception during connection of device %s: %s', device_config.uuid, e)
 
-    if len(coros_connect) > 0:
-      self._logger.debug("coros connect")
-      await asyncio.gather(*coros_connect)
-
   async def __disconnect_devices(self):
-    self._logger.debug('Disconnection of %i devices', len(self._refossEMs))
-    self._refossEMs.clear()
+    self._logger.debug('Disconnection of %i devices', len(self._refossems))
+    for device in self._refossems:
+      await device.stop()
+
+    self._refossems.clear()
     await asyncio.sleep(1)
 
 RefossD().run()

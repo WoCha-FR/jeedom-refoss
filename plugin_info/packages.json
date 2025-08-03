@@ -2,7 +2,8 @@
   "pre-install": {},
   "apt": {},
   "pip3": {
-    "jeedomdaemon": {}
+    "jeedomdaemon": {},
+    "aiohttp": {}
   },
   "npm": {},
   "yarn": {},

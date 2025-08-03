@@ -6,6 +6,7 @@ require_once __DIR__  . '/../../../../core/php/core.inc.php';
 
 class refoss extends eqLogic
 {
+  private static $_restart_daemon = false;
 
   /** Static Functions */
   public static function discoverModule($address = '255.255.255.255')
@@ -72,11 +73,27 @@ class refoss extends eqLogic
         $eqLogic->setConfiguration('subtype', $data['subType']);
         $eqLogic->setIsVisible(1);
         $eqLogic->setIsEnable(1);
+        event::add('refoss::newDevice');
       }
       // Paramètres evolutifs
       $eqLogic->setConfiguration('ip', $data['ip']);
       $eqLogic->setConfiguration('software', $data['devSoftWare']);
       $eqLogic->save();
+    }
+  }
+
+  public function preUpdate()
+  {
+    if ($this->getIsEnable() != eqLogic::byId($this->getId())->getIsEnable()) {
+      self::$_restart_daemon = true;
+    }
+  }
+
+  public function postUpdate()
+  {
+    if (self::$_restart_daemon) {
+      log::add(__CLASS__, 'debug', '[' . __FUNCTION__ . '] ' . __('Equipements actifs modifiés, redémarrage du démon. ', __FILE__));
+      self::executeAsync('deamon_start');
     }
   }
 
@@ -124,6 +141,22 @@ class refoss extends eqLogic
     return false;
   }
 
+  private static function executeAsync(string $_method, $_date = 'now')
+  {
+    if (!method_exists(__CLASS__, $_method)) {
+      throw new InvalidArgumentException("Method provided for executeAsync does not exist: {$_method}");
+    }
+
+    $cron = new cron();
+    $cron->setClass(__CLASS__);
+    $cron->setFunction($_method);
+    $cron->setOnce(1);
+    $scheduleTime = strtotime($_date);
+    $cron->setSchedule(cron::convertDateToCron($scheduleTime));
+    $cron->save();
+    $cron->run();
+  }
+
   /** DEAMON */
   public static function deamon_info()
   {
@@ -161,12 +194,21 @@ class refoss extends eqLogic
     if ($deamon_info['launchable'] != 'ok') {
       throw new Exception(__('Veuillez vérifier la configuration', __FILE__));
     }
+    message::removeAll(__CLASS__, 'refoss_no_devices');
+
+    $excluded_uuid = '';
+    foreach (eqLogic::byType(__CLASS__) as $eqlogic) {
+      if ($eqlogic->getIsEnable() == 0) {
+        $excluded_uuid .= $eqlogic->getLogicalId() . ',';
+      }
+    }
 
     $path = realpath(dirname(__FILE__) . '/../../resources/refossd');
     $cmd = self::getPython3() . "{$path}/refossd.py";
     $cmd .= ' --loglevel ' . log::convertLogLevel(log::getLogLevel(__CLASS__));
     $cmd .= ' --socketport ' . self::getSocketPort();
     $cmd .= ' --actu ' . config::byKey('refoss::cycle', __CLASS__, 5);
+    $cmd .= " --excluded_uuid '{$excluded_uuid}'";
     $cmd .= ' --callback ' . network::getNetworkAccess('internal', 'proto:127.0.0.1:port:comp') . '/plugins/refoss/core/php/jeerefoss.php';
     $cmd .= ' --apikey ' . jeedom::getApiKey(__CLASS__);
     $cmd .= ' --pid ' . jeedom::getTmpFolder(__CLASS__) . '/daemon.pid';
@@ -188,6 +230,13 @@ class refoss extends eqLogic
     message::removeAll(__CLASS__, 'unableStartDeamon');
 
     return true;
+  }
+
+  public static function backupExclude()
+  {
+    return [
+      'resources/venv'
+    ];
   }
 
   private static function getPython3()

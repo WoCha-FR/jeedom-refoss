@@ -12,13 +12,8 @@ import socket
 from ast import literal_eval
 import configparser
 
-#from refoss.discover import Discovery
-
-DISCOVERY_TIMEOUT = 8
-BROADCAST_IP = '255.255.255.255'
-
-class SocketError(Exception):
-  """Exception raised when socket send msg."""
+from .const import BROADCAST_IP, DISCOVERY_TIMEOUT
+from .exceptions import SocketError
 
 class refossConfig(object):
   def __init__(self, uuid: str, data: dict):
@@ -119,7 +114,7 @@ class refossConfigs:
               if uuid not in configs.keys():
                 self._logger.debug('Device at IP: %s Data: %s', addr[0], json.dumps(parsedMsg))
                 new_device = refossConfig(uuid, parsedMsg)
-                self._logger.info("Found device %s at IP %s", new_device.name, new_device.ip)
+                self._logger.info("Found device %s - %s at IP %s", new_device.name, new_device.uuid, new_device.ip)
                 configs[uuid] = new_device
           except Exception as e:
             self._logger.info("json decode error: %s", e)
@@ -142,12 +137,12 @@ class refossConfigs:
 
     for discovered_device in discovered_devices.values():
       if discovered_device.uuid in self.__devices.keys():
-        self._logger.info("Device %s already configured, updating data", discovered_device.name)
+        self._logger.info("Device %s - %s already configured, updating data", discovered_device.name, discovered_device.uuid)
         self.__devices[discovered_device.uuid].ip = discovered_device.ip
         self.__devices[discovered_device.uuid].name = discovered_device.name
-        self.__devices[discovered_device.uuid].soft = discovered_device.soft
+        self.__devices[discovered_device.uuid].softversion = discovered_device.softversion
       else:
-        self._logger.info("Device %s added to configuration", discovered_device.name)
+        self._logger.info("Device %s - %s added to configuration", discovered_device.name, discovered_device.uuid)
         self.__devices[discovered_device.uuid] = discovered_device
 
     return self.__save_config_file()

@@ -1,6 +1,5 @@
 /* This file is part of Jeedom-Refoss plugin. */
 document.getElementById('bt_syncRefoss').addEventListener('click', function () {
-
   jeeDialog.prompt({
     title: "{{Découverte des équipements}}",
     message: '<b>{{IP du module (optionnelle)}}:</b> <sup><i class="fas fa-question-circle" title="{{uniquement nécessaire si le module est sur un LAN différent de Jeedom}}"></i></sup>',
@@ -26,10 +25,18 @@ document.getElementById('bt_syncRefoss').addEventListener('click', function () {
             jeedomUtils.showAlert({ message: data.result, level: 'danger' })
             return
           }
+          jeedomUtils.showAlert({ message: '{{Découverte en cours, veuillez patienter.}}', level: 'success' });
         },
       })
     }
   })
+});
+
+document.querySelector('body').addEventListener('refoss::newDevice', function () {
+  jeedomUtils.showAlert({ message: '{{Un nouvel équipement a été ajouté. Actualisation de la page dans 5s...}}', level: 'success' });
+  setTimeout(function () {
+    window.location.replace("index.php?v=d&m=refoss&p=refoss");
+    }, 5000);
 });
 
 function addCmdToTable(_cmd) {
