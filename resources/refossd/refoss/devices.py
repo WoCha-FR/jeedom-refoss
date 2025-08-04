@@ -80,9 +80,9 @@ class EnergyMonitor:
                 for item in jsonObject:
                   prefix = CHANNEL_NAME[item['channel']]
                   ret.update({
-                      f"{prefix}voltage": item['voltage'],
-                      f"{prefix}current": item['current'],
-                      f"{prefix}power": item['power'],
+                      f"{prefix}voltage": item['voltage']/1000,
+                      f"{prefix}current": item['current']/1000,
+                      f"{prefix}power": item['power']/1000,
                       f"{prefix}factor": item['factor'],
                     })
                 await self.__daemon.send_to_jeedom({f"{self._config.uuid}": ret})
@@ -126,7 +126,7 @@ class EnergyMonitor:
                 for item in jsonObject:
                   prefix = CHANNEL_NAME[item['channel']]
                   ret.update(
-                    {f"{prefix}total": item['total']}
+                    {f"{prefix}total": item['total']/1000}
                   )
                 await self.__daemon.send_to_jeedom({f"{self._config.uuid}": ret})
               else :
