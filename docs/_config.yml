@@ -1,0 +1,6 @@
+title: Refoss EM06
+description: Plugin pour Jeedom.
+show_downloads: false
+theme: jekyll-theme-hacker
+markdown: GFM
+timezone: "Europe/Paris"
