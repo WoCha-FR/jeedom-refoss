@@ -41,6 +41,15 @@ try {
     if ($result['msg'] == 'NO_DEVICES') {
       message::add('refoss', __('Aucun device configuré, veuillez lancer une découverte depuis la page de gestion des équipements du plugin', __FILE__), '', 'refoss_no_devices');
     }
+  } else {
+    foreach ($result as $_key => $_values) {
+      $eqLogic = eqLogic::byLogicalId($_key, 'refoss');
+      if (is_object($eqLogic)) {
+        refoss::checkAndUpdateDeviceValues($_key, $_values);
+      } else {
+        log::add('refoss', 'debug', json_encode($result));
+      }
+    }
   }
   echo 'OK';
 } catch (Exception $e) {

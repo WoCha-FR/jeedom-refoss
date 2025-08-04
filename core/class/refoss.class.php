@@ -6,6 +6,8 @@ require_once __DIR__  . '/../../../../core/php/core.inc.php';
 
 class refoss extends eqLogic
 {
+  const PYTHON_PATH = __DIR__ . '/../../resources/venv/bin/python3';
+
   private static $_restart_daemon = false;
 
   /** Static Functions */
@@ -79,6 +81,26 @@ class refoss extends eqLogic
       $eqLogic->setConfiguration('ip', $data['ip']);
       $eqLogic->setConfiguration('software', $data['devSoftWare']);
       $eqLogic->save();
+    }
+  }
+
+  public static function checkAndUpdateDeviceValues($_eqLogicId, $_values)
+  {
+    // Verify eqLogic
+    $_eqLogic = self::byLogicalId($_eqLogicId, __CLASS__);
+    if (!is_object($_eqLogic)) {
+      log::add(__CLASS__, 'warning', __('Equipement Inconnu: ', __FILE__) . $_eqLogicId);
+      return;
+    }
+    // Update des valeurs
+    foreach ($_values as $_cmdLogicId => $_value) {
+      $_cmd = $_eqLogic->getCmd('info', $_cmdLogicId);
+      if (!is_object($_cmd)) {
+        log::add(__CLASS__, 'debug', __('Commande ', __FILE__) . $_cmdLogicId . __(' inconnue dans l\'equipement ', __FILE__) . $_eqLogicId);
+        continue;
+      }
+      log::add(__CLASS__, 'debug', __('Valeur reçue pour la commande', __FILE__) . ' ' . $_cmdLogicId . ' : ' . $_value);
+      $_eqLogic->checkAndUpdateCmd($_cmdLogicId, $_value);
     }
   }
 
@@ -158,6 +180,21 @@ class refoss extends eqLogic
   }
 
   /** DEAMON */
+  public static function dependancy_info()
+  {
+    $return = array();
+    $return['log'] = log::getPathToLog(__CLASS__ . '_update');
+    $return['progress_file'] = jeedom::getTmpFolder(__CLASS__) . '/dependence';
+    $return['state'] = 'ok';
+
+    if (file_exists(jeedom::getTmpFolder(__CLASS__) . '/dependence')) {
+      $return['state'] = 'in_progress';
+    } elseif (!file_exists(self::PYTHON_PATH)) {
+      $return['state'] = 'nok';
+    }
+    return $return;
+  }
+
   public static function deamon_info()
   {
     $return = array();

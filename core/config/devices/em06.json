@@ -2,7 +2,7 @@
   "name": "EM06",
   "commands" : [
     {
-      "name": "A1 Tension",
+      "name": "{{A1 Tension}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -16,7 +16,7 @@
       "logicalId" : "a1voltage"
     },
     {
-      "name": "A1 Courant",
+      "name": "{{A1 Courant}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -30,7 +30,7 @@
       "logicalId" : "a1current"
     },
     {
-      "name": "A1 Puissance",
+      "name": "{{A1 Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -44,7 +44,7 @@
       "logicalId" : "a1power"
     },
     {
-      "name": "A1 Facteur Puissance",
+      "name": "{{A1 Facteur Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -61,7 +61,7 @@
       "logicalId" : "a1factor"
     },
     {
-      "name": "A1 Consommation",
+      "name": "{{A1 Consommation}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -75,7 +75,7 @@
       "logicalId" : "a1total"
     },
     {
-      "name": "A2 Tension",
+      "name": "{{A2 Tension}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -89,7 +89,7 @@
       "logicalId" : "a2voltage"
     },
     {
-      "name": "A2 Courant",
+      "name": "{{A2 Courant}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -103,7 +103,7 @@
       "logicalId" : "a2current"
     },
     {
-      "name": "A2 Puissance",
+      "name": "{{A2 Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -117,7 +117,7 @@
       "logicalId" : "a2power"
     },
     {
-      "name": "A2 Facteur Puissance",
+      "name": "{{A2 Facteur Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -134,7 +134,7 @@
       "logicalId" : "a2factor"
     },
     {
-      "name": "A2 Consommation",
+      "name": "{{A2 Consommation}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -148,7 +148,7 @@
       "logicalId" : "a2total"
     },
     {
-      "name": "B1 Tension",
+      "name": "{{B1 Tension}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -162,7 +162,7 @@
       "logicalId" : "b1voltage"
     },
     {
-      "name": "B1 Courant",
+      "name": "{{B1 Courant}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -176,7 +176,7 @@
       "logicalId" : "b1current"
     },
     {
-      "name": "B1 Puissance",
+      "name": "{{B1 Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -190,7 +190,7 @@
       "logicalId" : "b1power"
     },
     {
-      "name": "B1 Facteur Puissance",
+      "name": "{{B1 Facteur Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -207,7 +207,7 @@
       "logicalId" : "b1factor"
     },
     {
-      "name": "B1 Consommation",
+      "name": "{{B1 Consommation}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -221,7 +221,7 @@
       "logicalId" : "b1total"
     },
     {
-      "name": "B2 Tension",
+      "name": "{{B2 Tension}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -235,7 +235,7 @@
       "logicalId" : "b2voltage"
     },
     {
-      "name": "B2 Courant",
+      "name": "{{B2 Courant}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -249,7 +249,7 @@
       "logicalId" : "b2current"
     },
     {
-      "name": "B2 Puissance",
+      "name": "{{B2 Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -263,7 +263,7 @@
       "logicalId" : "b2power"
     },
     {
-      "name": "B2 Facteur Puissance",
+      "name": "{{B2 Facteur Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -280,7 +280,7 @@
       "logicalId" : "b2factor"
     },
     {
-      "name": "B2 Consommation",
+      "name": "{{B2 Consommation}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -294,7 +294,7 @@
       "logicalId" : "b2total"
     },
     {
-      "name": "C1 Tension",
+      "name": "{{C1 Tension}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -308,7 +308,7 @@
       "logicalId" : "c1voltage"
     },
     {
-      "name": "C1 Courant",
+      "name": "{{C1 Courant}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -322,7 +322,7 @@
       "logicalId" : "c1current"
     },
     {
-      "name": "C1 Puissance",
+      "name": "{{C1 Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -336,7 +336,7 @@
       "logicalId" : "c1power"
     },
     {
-      "name": "C1 Facteur Puissance",
+      "name": "{{C1 Facteur Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -353,7 +353,7 @@
       "logicalId" : "c1factor"
     },
     {
-      "name": "C1 Consommation",
+      "name": "{{C1 Consommation}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -367,7 +367,7 @@
       "logicalId" : "c1total"
     },
     {
-      "name": "C2 Tension",
+      "name": "{{C2 Tension}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -381,7 +381,7 @@
       "logicalId" : "c2voltage"
     },
     {
-      "name": "C2 Courant",
+      "name": "{{C2 Courant}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -395,7 +395,7 @@
       "logicalId" : "c2current"
     },
     {
-      "name": "C2 Puissance",
+      "name": "{{C2 Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -409,7 +409,7 @@
       "logicalId" : "c2power"
     },
     {
-      "name": "C2 Facteur Puissance",
+      "name": "{{C2 Facteur Puissance}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,
@@ -426,7 +426,7 @@
       "logicalId" : "c2factor"
     },
     {
-      "name": "C2 Consommation",
+      "name": "{{C2 Consommation}}",
       "type": "info",
       "subtype": "numeric",
       "isVisible": 0,

@@ -81,13 +81,12 @@ class RefossD(BaseDaemon):
     await self.__disconnect_devices()
 
     for device_config in self._refossconfigs.devices.values():
-      self._logger.info('device : %s', device_config.uuid)
       try:
         if device_config.uuid in self._config.excluded_uuid:
           self.logger.debug('Device desactivated: %s', device_config.uuid)
           continue
 
-        new_device = EnergyMonitor(device_config)
+        new_device = EnergyMonitor(self, device_config)
         new_device.update_interval = self._config.actualisation
         await new_device.start()
 

@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 from __future__ import annotations
 
 import asyncio
@@ -13,7 +10,6 @@ from ast import literal_eval
 import configparser
 
 from .const import BROADCAST_IP, DISCOVERY_TIMEOUT
-from .exceptions import SocketError
 
 class refossConfig(object):
   def __init__(self, uuid: str, data: dict):
