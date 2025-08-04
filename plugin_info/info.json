@@ -1,9 +1,9 @@
 {
 	"id": "refoss",
-	"name": "Refoss",
+	"name": "Refoss EM",
 	"pluginVersion": "1.0",
 	"description": {
-		"fr_FR": "Récupération en local des données des Refoss EM06",
+		"fr_FR": "Récupération en local des données des moniteurs d'énergie Refoss EM06",
 		"en_US": "Local recovery of data from Refoss EM06 devices"
 	},
 	"licence": "AGPL",

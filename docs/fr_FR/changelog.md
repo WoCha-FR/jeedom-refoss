@@ -1,4 +1,4 @@
-# Changelog Refoss EM - BETA
+# Changelog Refoss EM
 
 >**IMPORTANT**
 >
